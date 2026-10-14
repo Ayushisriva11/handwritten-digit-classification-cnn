@@ -1,0 +1,6 @@
+# Libraries Required
+
+streamlit
+tensorflow
+pillow
+numpy
