@@ -68,9 +68,8 @@ MNIST_CNN_Project/
 ├── MNIST_CNN_Training.ipynb
 ├── mnist_cnn_model.h5
 ├── README.md
-└── screenshots/
-    ├── app_home.png
-    └── digit_prediction.png
+├── app_home.png
+└── digit_prediction.png
 ```
 
 ## 🚀 Installation and Usage
