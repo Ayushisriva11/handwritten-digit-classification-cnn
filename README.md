@@ -1,105 +1,109 @@
-# 🧠 Handwritten Digit Classification using CNN
+# ✍️ Handwritten Digit Classification using CNN
 
-A deep learning project that recognizes handwritten digits (0–9) using a Convolutional Neural Network (CNN). The project includes a Streamlit web interface for interactive predictions.
+A deep learning project that recognizes handwritten digits (0–9) using a **Convolutional Neural Network (CNN)** built with TensorFlow and Keras. The project includes an interactive Streamlit web application for making predictions from uploaded images.
 
-## 🚀 Project Highlights
+## 📌 Project Overview
 
-- Achieved **98.76% test accuracy** using a CNN.
-- Trained and evaluated models on the MNIST handwritten digit dataset.
-- Implemented image normalization, reshaping, and one-hot encoding.
-- Compared Perceptron, Artificial Neural Network (ANN), and CNN performance.
-- Built a Streamlit interface for handwritten digit predictions.
-- Saved the trained CNN model to make predictions without retraining.
+The model is trained on the MNIST handwritten digit dataset. It learns patterns from image pixels and predicts the digit present in an image.
+
+## ✨ Features
+
+- 🔢 Handwritten digit recognition (0–9)
+- 🧠 CNN model built using TensorFlow and Keras
+- 🖼️ Image preprocessing for model input
+- 📊 Prediction confidence score
+- 🌐 Interactive Streamlit web interface
+- 💾 Saved model for predictions without retraining
 
 ## 🛠️ Technologies Used
 
-- Python
-- TensorFlow and Keras
-- CNN and Artificial Neural Networks
-- NumPy and Pandas
-- Matplotlib and Seaborn
-- Scikit-learn
-- Streamlit
+- 🐍 Python
+- 🧠 TensorFlow and Keras
+- 🔢 NumPy and Pandas
+- 📈 Matplotlib
+- 🌐 Streamlit
+- 📓 Jupyter Notebook
 
-## 📊 Dataset
+## 🏗️ Model Architecture
 
-The project uses the MNIST handwritten digit dataset, containing 60,000 training images and 10,000 test images. Each image is represented as a 28 × 28 grayscale image.
+The CNN contains the following layers:
 
-The training notebook currently loads the dataset from two CSV files:
+1. **Conv2D:** 32 filters with ReLU activation
+2. **MaxPooling2D:** Reduces spatial dimensions
+3. **Conv2D:** 64 filters with ReLU activation
+4. **MaxPooling2D:** Further reduces spatial dimensions
+5. **Flatten:** Converts feature maps into a one-dimensional vector
+6. **Dense:** 128 neurons with ReLU activation
+7. **Dropout:** Rate of 0.5 to help reduce overfitting
+8. **Output Layer:** 10 neurons with Softmax activation for digit classification
 
-- `mnist_train.csv`
-- `mnist_test.csv`
+⚙️ **Optimizer:** Adam  
+📉 **Loss Function:** Categorical Cross-Entropy
 
-**Dataset source:** [MNIST Dataset on Kaggle](https://www.kaggle.com/datasets/hojjatk/mnist-dataset)
-
-Download the CSV files and place them in the same directory as the notebook before running the training cells.
-
-## 🧠 CNN Architecture
-
-The CNN model consists of:
-
-1. Input layer for 28 × 28 grayscale images
-2. Convolutional layer with 32 filters
-3. Max-pooling layer
-4. Convolutional layer with 64 filters
-5. Max-pooling layer
-6. Flatten layer
-7. Dense layer with 128 neurons and ReLU activation
-8. Dropout layer with a rate of 0.5
-9. Output layer with 10 neurons and softmax activation
-
-The model was trained for 5 epochs using the Adam optimizer and categorical cross-entropy loss.
-
-## 📈 Model Performance
+## 📊 Model Performance
 
 | Model | Test Accuracy |
 |---|---:|
-| Perceptron | 88.08% |
-| ANN | 95.97% |
-| CNN | **98.76%** |
+| 🧠 CNN | **98.76%** |
+| 🔹 ANN | 95.97% |
+| 🔸 Simple Perceptron | 88.08% |
 
-The CNN achieved the highest test accuracy among the three implemented models.
+🏆 The CNN achieved **98.76% test accuracy** in the recorded evaluation.
 
-## 📁 Project Structure
+## 🖥️ Application Screenshots
+
+### 🏠 Home Interface
+
+![Streamlit application home screen](app_home.png)
+
+### 🔍 Digit Prediction
+
+![Handwritten digit prediction result](digit_prediction.png)
+
+## 📂 Project Structure
 
 ```text
-handwritten-digit-classification-cnn/
+MNIST_CNN_Project/
 ├── app.py
-├── mnist_cnn_model.h5
 ├── MNIST_CNN_Training.ipynb
-└── README.md
+├── mnist_cnn_model.h5
+├── README.md
+└── screenshots/
+    ├── app_home.png
+    └── digit_prediction.png
 ```
 
-## 💻 Run the Streamlit Application
+## 🚀 Installation and Usage
 
-### 1. Clone the repository
+### 1️⃣ Install the Required Libraries
+
+Make sure Python is installed, then open a terminal in your project folder and run:
 
 ```bash
-git clone https://github.com/Ayushisriva11/handwritten-digit-classification-cnn.git
-cd handwritten-digit-classification-cnn
+pip install streamlit tensorflow pillow numpy
 ```
 
-### 2. Install the required packages
+### 2️⃣ Run the Streamlit Application
 
-```bash
-pip install tensorflow streamlit numpy pillow
-```
-
-Install any additional packages imported by `app.py` if needed.
-
-### 3. Launch the application
+Run the following command from your project folder:
 
 ```bash
 streamlit run app.py
 ```
 
-The application should open in your browser. The saved model `mnist_cnn_model.h5` is used for predictions, so the model does not need to be trained again each time the app starts.
+### 3️⃣ Use the Application
 
-## 🔮 Future Improvements
+🌐 The application will open in your browser.
 
-- Deploy the application online.
-- Add more evaluation metrics and prediction visualizations.
-- Improve the interface and display prediction confidence.
+- 📤 Upload an image of a handwritten digit.
+- 🔍 The CNN model processes the image and predicts the digit.
+- 📊 View the predicted digit and its confidence score.
+
+## 📓 Training Notebook
+
+The `MNIST_CNN_Training.ipynb` notebook contains the model training process.
+
+📌 **Note:** The notebook requires the MNIST CSV dataset files in the expected location if you want to train the model again. The Streamlit application loads the saved model and does not retrain it for every prediction.
 
 ## 👩‍💻 Author
 
